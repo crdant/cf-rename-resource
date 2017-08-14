@@ -8,7 +8,7 @@ import (
 	. "github.com/onsi/gomega"
 
 	"github.com/crdant/cf-rename-resource"
-	"github.com/crdant/cf-route-resource/out"
+	"github.com/crdant/cf-rename-resource/out"
 	"github.com/crdant/cf-route-resource/out/fakes"
 )
 

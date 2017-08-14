@@ -7,7 +7,7 @@ image_resource:
 
 inputs:
 - name: cf-resource
-  path: gopath/src/github.com/crdant/cf-route-resource
+  path: gopath/src/github.com/crdant/cf-rename-resource
 - name: autopilot
   path: gopath/src/github.com/contraband/autopilot
 - name: cf-cli
@@ -16,4 +16,4 @@ outputs:
 - name: built-resource
 
 run:
-  path: gopath/src/github.com/crdant/cf-route-resource/scripts/ci
+  path: gopath/src/github.com/crdant/cf-rename-resource/scripts/ci

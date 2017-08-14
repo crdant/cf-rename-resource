@@ -18,7 +18,7 @@ var binPath string
 var _ = BeforeSuite(func() {
 	var err error
 
-	binPath, err = gexec.Build("github.com/crdant/cf-route-resource/out/cmd/out")
+	binPath, err = gexec.Build("github.com/crdant/cf-rename-resource/out/cmd/out")
 	Expect(err).NotTo(HaveOccurred())
 })
 

@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/crdant/cf-rename-resource"
-	"github.com/crdant/cf-route-resource/in"
+	"github.com/crdant/cf-rename-resource/in"
 )
 
 func main() {

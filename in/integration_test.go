@@ -14,7 +14,7 @@ import (
 	"github.com/onsi/gomega/gexec"
 
 	"github.com/crdant/cf-rename-resource"
-	"github.com/crdant/cf-route-resource/in"
+	"github.com/crdant/cf-rename-resource/in"
 )
 
 var _ = Describe("In", func() {
@@ -25,7 +25,7 @@ var _ = Describe("In", func() {
 	)
 
 	JustBeforeEach(func() {
-		binPath, err := gexec.Build("github.com/crdant/cf-route-resource/in/cmd/in")
+		binPath, err := gexec.Build("github.com/crdant/cf-rename-resource/in/cmd/in")
 		Expect(err).NotTo(HaveOccurred())
 
 		tmpDir, err = ioutil.TempDir("", "cf_resource_in")

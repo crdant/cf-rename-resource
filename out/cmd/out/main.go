@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/crdant/cf-route-resource/out"
+	"github.com/crdant/cf-rename-resource/out"
 )
 
 func main() {

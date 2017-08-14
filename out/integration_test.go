@@ -18,7 +18,7 @@ import (
 	"github.com/onsi/gomega/gexec"
 
 	"github.com/crdant/cf-rename-resource"
-	"github.com/crdant/cf-route-resource/out"
+	"github.com/crdant/cf-rename-resource/out"
 )
 
 var _ = Describe("Out", func() {

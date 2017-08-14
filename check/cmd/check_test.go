@@ -11,7 +11,7 @@ import (
 
 var _ = Describe("Check", func() {
 	It("outputs an empty JSON array so that it satisfies the resource interface", func() {
-		bin, err := Build("github.com/crdant/cf-route-resource/check/cmd/check")
+		bin, err := Build("github.com/crdant/cf-rename-resource/check/cmd/check")
 		Expect(err).NotTo(HaveOccurred())
 
 		cmd := exec.Command(bin)

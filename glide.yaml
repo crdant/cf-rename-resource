@@ -1,6 +1,6 @@
 package: .
 import:
-- package: github.com/crdant/cf-route-resource
+- package: github.com/crdant/cf-rename-resource
   subpackages:
   - in
   - out
