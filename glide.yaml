@@ -1,0 +1,13 @@
+package: .
+import:
+- package: github.com/crdant/cf-route-resource
+  subpackages:
+  - in
+  - out
+  - check
+testImport:
+- package: github.com/onsi/ginkgo
+- package: github.com/onsi/gomega
+  subpackages:
+  - gbytes
+  - gexec

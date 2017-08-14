@@ -1,0 +1,22 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: concourse/buildroot
+    tag: git
+
+inputs:
+  - name: source
+  - name: build
+
+outputs:
+  - name: assets
+
+run:
+  path: source/ci/tasks/assets.sh
+  args: [
+    --input-dir, build,
+    --output-dir, assets
+  ]
