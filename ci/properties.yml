@@ -1,4 +1,0 @@
-resource-name: cf-rename-resource
-git-server-base: "https://github.com/"
-git-branch: master
-version-git-branch: version
