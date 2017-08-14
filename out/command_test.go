@@ -14,13 +14,13 @@ import (
 
 var _ = Describe("Out Command", func() {
 	var (
-		cloudFoundry *fakes.FakePAAS
+		cloudFoundry *outfakes.FakePAAS
 		request      out.Request
 		command      *out.Command
 	)
 
 	BeforeEach(func() {
-		cloudFoundry = &fakes.FakePAAS{}
+		cloudFoundry = &outfakes.FakePAAS{}
 		command = out.NewCommand(cloudFoundry)
 
 		request = out.Request{
@@ -73,8 +73,8 @@ var _ = Describe("Out Command", func() {
 			Expect(org).To(Equal("secret"))
 			Expect(space).To(Equal("volcano-base"))
 
-			By("creating the route")
-			Expect(cloudFoundry.CreateRouteCallCount()).To(Equal(1))
+			By("renaming the application")
+			Expect(cloudFoundry.RenameCallCount()).To(Equal(1))
 
 			currentName, newName := cloudFoundry.RenameArgsForCall(0)
 			Expect(currentName).To(Equal("foo"))
@@ -97,13 +97,6 @@ var _ = Describe("Out Command", func() {
 
 			It("from targetting an org and space", func() {
 				cloudFoundry.TargetReturns(expectedError)
-
-				_, err := command.Run(request)
-				Expect(err).To(MatchError(expectedError))
-			})
-
-			It("from renaming the application", func() {
-				cloudFoundry.RenameReturns(expectedError)
 
 				_, err := command.Run(request)
 				Expect(err).To(MatchError(expectedError))

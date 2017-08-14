@@ -1,5 +1,10 @@
 package out
 
+import (
+	"os"
+	"os/exec"
+)
+
 type PAAS interface {
 	Login(api string, username string, password string, insecure bool) error
 	Target(organization string, space string) error
@@ -33,4 +38,13 @@ func (cf *CloudFoundry) Target(organization string, space string) error {
 func (cf *CloudFoundry) Rename(currentName string, newName string) error {
 	args := []string{"rename", currentName, newName}
 	return cf.cf(args...).Run()
+}
+
+func (cf *CloudFoundry) cf(args ...string) *exec.Cmd {
+	cmd := exec.Command("cf", args...)
+	cmd.Stdout = os.Stderr
+	cmd.Stderr = os.Stderr
+	cmd.Env = append(os.Environ(), "CF_COLOR=true")
+
+	return cmd
 }

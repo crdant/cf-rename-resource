@@ -2,8 +2,6 @@ package out
 
 import (
 	"errors"
-	"os"
-	"os/exec"
 	"time"
 
 	"github.com/crdant/cf-rename-resource"
@@ -60,13 +58,4 @@ func (command *Command) Run(request Request) (Response, error) {
 			},
 		},
 	}, nil
-}
-
-func (cf *CloudFoundry) cf(args ...string) *exec.Cmd {
-	cmd := exec.Command("cf", args...)
-	cmd.Stdout = os.Stderr
-	cmd.Stderr = os.Stderr
-	cmd.Env = append(os.Environ(), "CF_COLOR=true")
-
-	return cmd
 }
