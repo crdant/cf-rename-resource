@@ -9,7 +9,7 @@ import (
 
 	"github.com/crdant/cf-rename-resource"
 	"github.com/crdant/cf-rename-resource/out"
-	"github.com/crdant/cf-route-resource/out/fakes"
+	"github.com/crdant/cf-rename-resource/out/fakes"
 )
 
 var _ = Describe("Out Command", func() {
